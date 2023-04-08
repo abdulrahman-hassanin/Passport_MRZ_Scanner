@@ -16,8 +16,12 @@ class MRZ_OCR:
         mrzText = mrzText.replace(" ", "")
         self.mrz.append(mrzText)
     
-    def easyOCR(self):
-        reader = easyocr.Reader(['en'], gpu=False)
+    def easyOCR(self, device='gpu'):
+        gpu = False
+        if device == 'gpu':
+            gpu = True
+            
+        reader = easyocr.Reader(['en'], gpu=gpu)
         results = reader.readtext(self.image)
         
         # loop over the results

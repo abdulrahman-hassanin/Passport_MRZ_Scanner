@@ -8,7 +8,11 @@ if __name__ == '__main__':
     # construct the argument parser and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--image", required=True,
-        help="path to input image to be OCR'd")
+        help="path to input image")
+    ap.add_argument("-o", "--ocr", choices=['easyocr', 'pytesseract'], default='easyocr',
+        help="OCR algorithm")
+    ap.add_argument("-g", "--device", choices=['gpu', 'cpu'], default='gpu',
+        help="Device used for processing gpu or cpu")
     args = vars(ap.parse_args())
 
     # Read Image
@@ -20,8 +24,10 @@ if __name__ == '__main__':
 
     # Extract MRZ
     ocr = MRZ_OCR(image=ori_detector.mrz_box)
-    ocr.easyOCR()
-    # ocr.pytesseract_OCR()
+    if args["ocr"] == "easyocr":
+        ocr.easyOCR(device=args["device"])
+    else:
+        ocr.pytesseract_OCR()
 
     # Print MRZ
     mrz_code = []
