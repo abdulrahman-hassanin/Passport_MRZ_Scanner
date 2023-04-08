@@ -24,11 +24,16 @@ if __name__ == '__main__':
     # ocr.pytesseract_OCR()
 
     # Print MRZ
+    mrz_code = []
     text = ''.join(ocr.mrz)
-    print(text[:int(len(text)/2)])
-    print(text[int(len(text)/2):])
+    mrz_code.append(text[:int(len(text)/2)])
+    mrz_code.append(text[int(len(text)/2):])
 
-    cv2.imshow("mrz", ori_detector.mrz_box)
-    cv2.waitKey(0)
+    # cv2.imshow("mrz", ori_detector.mrz_box)
+    # cv2.waitKey(0)
     
     # Export to txt file
+    f = open("output.txt", "w")
+    f.write(mrz_code[0]+'\n')
+    f.write(mrz_code[1])
+    f.close()
