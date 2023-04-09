@@ -27,19 +27,19 @@ python mrz_ocr.py --image images\0.jpg --ocr easyocr --device gpu
 * Sample Input passport ID
 
 <p align="center">
-  <img alt="sample input" height=200 src="images/0.jpg">
+  <img alt="sample input" height=300 src="images/0.jpg">
 </p>
 
 
 * Detect the MRZ Region
 
 <p align="center">
-  <img alt="MRZ Region" width=350 src="assets/mrz_code.jpg">
+  <img alt="MRZ Region" width=450 src="assets/mrz_code.jpg">
 </p>
 
 
 * Extract MRZ code into text
 
 <p align="center">
-  <img alt="MRZ text" width=350 src="assets/mrz_text.jpg">
+  <img alt="MRZ text" width=450 src="assets/mrz_text.jpg">
 </p>
