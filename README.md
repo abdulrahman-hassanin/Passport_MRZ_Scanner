@@ -6,10 +6,10 @@ MRZ code contains some information of the passport owner like name, surname, dat
 # Approach
 The algorithm has two main stages:
 
-* MRZ Detection
+### MRZ Detection
 Detect the MRZ code section using image processing algorithms.
 
-* MRZ OCR
+### MRZ OCR
 Feed MRZ into OCR algorithm to extract the text. In this approach you can use any of two OCR algorithms [EasyOCR](https://github.com/JaidedAI/EasyOCR) and [Tesseract](https://github.com/tesseract-ocr/tesseract).
 
 | EasyOCR  | Tesseract |
@@ -26,20 +26,20 @@ python mrz_ocr.py --image images\0.jpg --ocr easyocr --device gpu
 
 * Sample Input passport ID
 
-<picture>
+<p align="center">
   <img alt="sample input" height=200 src="images/0.jpg">
-</picture>
+</p>
 
 
 * Detect the MRZ Region
 
-<picture>
+<p align="center">
   <img alt="MRZ Region" width=350 src="assets/mrz_code.jpg">
-</picture>
+</p>
 
 
 * Extract MRZ code into text
 
-<picture>
+<p align="center">
   <img alt="MRZ text" width=350 src="assets/mrz_text.jpg">
-</picture>
+</p>
