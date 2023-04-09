@@ -19,7 +19,7 @@ Feed MRZ into OCR algorithm to extract the text. In this approach you can use an
 
 # Usage
 ```bash
-python mrz_ocr.py --image images\0.jpg --ocr easyocr --device gpu
+python mrz_scanner.py --image images\0.jpg --ocr easyocr --device gpu
 ```
 
 # Output
